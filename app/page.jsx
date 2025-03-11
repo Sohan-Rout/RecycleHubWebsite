@@ -1,6 +1,10 @@
+'use client'
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="w-full min-h-screen bg-[#F3F4F6] font-[Poppins] flex flex-col">
       {/* Navbar */}
@@ -12,8 +16,8 @@ export default function Home() {
           </span>
         </div>
 
-        {/* Search Bar and Categories Button */}
-        <div className="flex items-center gap-2 flex-1 mx-4 max-w-2xl">
+        {/* Search Bar and Categories Button (Hidden on Small Screens) */}
+        <div className="hidden sm:flex items-center gap-2 flex-1 mx-4 max-w-2xl">
           {/* Categories Button */}
           <button className="text-2xl text-[#0E9C6F] hover:text-[#0D8A5F] transition-colors p-2">
             ☰
@@ -31,14 +35,37 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Login and Signup Buttons */}
-        <div className="flex items-center gap-4">
-          <button className="text-sm font-poppins sm:text-base text-black bg-[#0E9C6F] px-6 py-2 rounded-2xl hover:bg-inherit hover:text-[#0D8A5F] transition-colors border-2 border-[#0E9C6F] w-24">
-            Login
+        {/* Login and Signup Buttons (Dropdown Menu on Small Screens) */}
+        <div className="relative">
+          {/* Menu Button (Visible on Small Screens) */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="sm:hidden text-2xl text-[#0E9C6F] hover:text-[#0D8A5F] transition-colors p-2"
+          >
+            ☰
           </button>
-          <button className="text-sm font-poppins sm:text-base text-[#0E9C6F] border-2 border-[#0E9C6F] px-6 py-2 rounded-2xl bg-transparent hover:bg-[#0E9C6F] hover:text-black transition-colors w-24">
-            Signup
-          </button>
+
+          {/* Dropdown Menu */}
+          {isMenuOpen && (
+            <div className="absolute font-poppins right-0 mt-2 w-48 bg-white rounded-xl shadow-lg z-10">
+              <button className="w-full text-center px-4 py-2 text-sm text-[#111827] hover:bg-[#0E9C6F] rounded-xl hover:text-white">
+                Login
+              </button>
+              <button className="w-full text-center px-4 py-2 text-sm text-[#111827] hover:bg-[#0E9C6F] rounded-xl hover:text-white">
+                Signup
+              </button>
+            </div>
+          )}
+
+          {/* Login and Signup Buttons (Visible on Larger Screens) */}
+          <div className="hidden sm:flex items-center gap-4">
+            <button className="text-sm font-poppins sm:text-base text-black bg-[#0E9C6F] px-6 py-2 rounded-2xl hover:bg-inherit hover:text-[#0D8A5F] transition-colors border-2 border-[#0E9C6F] w-24">
+              Login
+            </button>
+            <button className="text-sm font-poppins sm:text-base text-[#0E9C6F] border-2 border-[#0E9C6F] px-6 py-2 rounded-2xl bg-transparent hover:bg-[#0E9C6F] hover:text-black transition-colors w-24">
+              Signup
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -51,10 +78,29 @@ export default function Home() {
           Discover eco-friendly products that are good for you and the planet.
         </p>
 
+        {/* Search Bar (Visible on Small Screens) */}
+        <div className="sm:hidden flex justify-center mb-8">
+          <div className="flex items-center gap-2 w-full max-w-md">
+            {/* Categories Button */}
+            <button className="text-2xl text-[#0E9C6F] hover:text-[#0D8A5F] transition-colors p-2">
+              ☰
+            </button>
+            {/* Search Bar */}
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="w-full rounded-full border border-solid border-[#0E9C6F] bg-white px-4 py-2 text-sm sm:text-base focus:outline-none focus:border-[#0E9C6F]"
+            />
+            <button className="rounded-2xl font-poppins font-medium bg-[#0E9C6F] text-white px-4 py-2 text-sm sm:text-base hover:bg-[#0D8A5F] transition-colors whitespace-nowrap">
+              Search
+            </button>
+          </div>
+        </div>
+
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {/* Product Card */}
-          <div className="bg-white rounded-lg shadow-md p-4">
+          <div className="bg-white font-poppins rounded-lg shadow-md p-4">
             <Image
               src="/bamboo-toothbrush.jpeg" // Replace with your product image
               alt="Bamboo Toothbrush"
@@ -72,7 +118,7 @@ export default function Home() {
           </div>
 
           {/* Product Card */}
-          <div className="bg-white rounded-lg shadow-md p-4">
+          <div className="bg-white font-poppins rounded-lg shadow-md p-4">
             <Image
               src="/bamboo-toothbrush.jpeg" // Replace with your product image
               alt="Bamboo Toothbrush"
@@ -90,7 +136,7 @@ export default function Home() {
           </div>
 
           {/* Product Card */}
-          <div className="bg-white rounded-lg shadow-md p-4">
+          <div className="bg-white font-poppins rounded-lg shadow-md p-4">
             <Image
               src="/bamboo-toothbrush.jpeg" // Replace with your product image
               alt="Bamboo Toothbrush"
@@ -108,7 +154,7 @@ export default function Home() {
           </div>
 
           {/* Product Card */}
-          <div className="bg-white rounded-lg shadow-md p-4">
+          <div className="bg-white font-poppins rounded-lg shadow-md p-4">
             <Image
               src="/bamboo-toothbrush.jpeg" // Replace with your product image
               alt="Bamboo Toothbrush"
