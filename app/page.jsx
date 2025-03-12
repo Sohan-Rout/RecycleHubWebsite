@@ -1,6 +1,5 @@
 'use client'
 import { Box, Container, Typography, Button, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero';
@@ -17,8 +16,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>EcoShop - AI-Powered Sustainable Shopping</title>
-        <meta name="description" content="EcoShop helps you make sustainable choices with AI-powered product recommendations and environmental impact insights." />
+        <title>RecycleHub - AI-Powered Sustainable Shopping</title>
+        <meta name="description" content="RecycleHub helps you make sustainable choices with AI-powered product recommendations and environmental impact insights." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

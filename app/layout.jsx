@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "EcoShop.in",
+  title: "RecycleHub",
   description: "Shop eco-freindly products",
 };
 

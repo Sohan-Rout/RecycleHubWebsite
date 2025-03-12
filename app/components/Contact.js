@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Container, Typography, Box, Grid, TextField, Button, Paper, useTheme } from '@mui/material';
 import { Email, Phone, LocationOn, Send } from '@mui/icons-material';
-import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -36,7 +35,7 @@ const Contact = () => {
     {
       icon: <EmailIcon sx={{ fontSize: 30 }} />,
       title: 'Email Us',
-      details: 'hello@ecoshop.com',
+      details: 'hello@recyclehub.com',
       color: '#4CAF50',
     },
     {
@@ -71,11 +70,9 @@ const Contact = () => {
       
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-100px" }}
+          <div
+            className="transition-all duration-500 ease-out"
+            style={{ opacity: 1, transform: 'translateY(0)' }}
           >
             <Typography 
               variant="overline" 
@@ -96,7 +93,7 @@ const Contact = () => {
               sx={{ 
                 fontWeight: 800,
                 mb: 3,
-                background: 'linear-gradient(45deg, #4CAF50 30%, #9370DB 90%)',
+                background: 'linear-gradient(45deg, #4CAF50 30%, #1976D2 90%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
@@ -113,18 +110,20 @@ const Contact = () => {
                 color: theme.palette.text.secondary,
               }}
             >
-              Have questions about EcoShop or want to partner with us? We'd love to hear from you!
+              Have questions about RecycleHub or want to partner with us? We'd love to hear from you!
             </Typography>
-          </motion.div>
+          </div>
         </Box>
         
         <Grid container spacing={6}>
           <Grid item xs={12} md={6}>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, margin: "-100px" }}
+            <div
+              className="transition-all duration-500 ease-out"
+              style={{ 
+                opacity: 1, 
+                transform: 'translateX(0)',
+                transitionDelay: '100ms' 
+              }}
             >
               <Box 
                 component="form" 
@@ -246,14 +245,18 @@ const Contact = () => {
                       color="primary"
                       size="large"
                       fullWidth
-                      component={motion.button}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
                       sx={{ 
                         py: 1.5,
                         borderRadius: '12px',
                         fontWeight: 600,
                         boxShadow: '0 4px 14px rgba(76, 175, 80, 0.4)',
+                        transition: 'transform 0.3s',
+                        '&:hover': {
+                          transform: 'scale(1.02)'
+                        },
+                        '&:active': {
+                          transform: 'scale(0.98)'
+                        }
                       }}
                     >
                       Send Message
@@ -261,15 +264,17 @@ const Contact = () => {
                   </Grid>
                 </Grid>
               </Box>
-            </motion.div>
+            </div>
           </Grid>
           
           <Grid item xs={12} md={6}>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, margin: "-100px" }}
+            <div
+              className="transition-all duration-500 ease-out"
+              style={{ 
+                opacity: 1, 
+                transform: 'translateX(0)',
+                transitionDelay: '200ms' 
+              }}
             >
               <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <Typography 
@@ -397,7 +402,7 @@ const Contact = () => {
                   </Typography>
                 </Box>
               </Box>
-            </motion.div>
+            </div>
           </Grid>
         </Grid>
       </Container>
