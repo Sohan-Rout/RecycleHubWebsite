@@ -1,17 +1,8 @@
-import { motion } from 'framer-motion';
-
 const About = () => {
   return (
     <section id="about" className="py-12 md:py-16 relative">
       <div className="container mx-auto px-4">
         <div className="gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: '-100px' }}
-            className="flex flex-col items-center" // Added flex and center alignment
-          >
             <div className="mb-4 self-start"> {/* Keep OUR STORY left-aligned */}
               <span className="text-sm font-semibold tracking-wider text-black uppercase">
                 OUR STORY
@@ -38,7 +29,6 @@ const About = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
         </div>
       </div>
     </section>

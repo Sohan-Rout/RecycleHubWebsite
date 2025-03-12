@@ -1,5 +1,4 @@
 import { Box, Container, Grid, Typography, Link, IconButton, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -56,11 +55,9 @@ const Footer = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Box sx={{ mb: 4 }}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
+              <div
+                className="transition-all duration-500 ease-out"
+                style={{ opacity: 1, transform: 'translateY(0)' }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                   <ShoppingBagIcon 
@@ -76,12 +73,10 @@ const Footer = () => {
                     sx={{ 
                       fontWeight: 800,
                       fontFamily: '"Fredoka One", cursive',
-                      background: 'linear-gradient(45deg, #4CAF50 30%, #9370DB 90%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
                     }}
                   >
-                    EcoShop
+                    <span style={{ color: '#4CAF50' }}>Recycle</span>
+                    <span style={{ color: '#1976D2' }}>Hub</span>
                   </Typography>
                 </Box>
                 
@@ -130,17 +125,19 @@ const Footer = () => {
                     <LinkedInIcon />
                   </IconButton>
                 </Box>
-              </motion.div>
+              </div>
             </Box>
           </Grid>
           
           {footerLinks.map((section, index) => (
             <Grid item xs={12} sm={6} md={2} key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+              <div
+                className="transition-all duration-500 ease-out"
+                style={{ 
+                  opacity: 1, 
+                  transform: 'translateY(0)',
+                  transitionDelay: `${index * 100}ms` 
+                }}
               >
                 <Typography 
                   variant="h6" 
@@ -174,16 +171,18 @@ const Footer = () => {
                     </Box>
                   ))}
                 </Box>
-              </motion.div>
+              </div>
             </Grid>
           ))}
           
           <Grid item xs={12} md={2}>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
+            <div
+              className="transition-all duration-500 ease-out"
+              style={{ 
+                opacity: 1, 
+                transform: 'translateY(0)',
+                transitionDelay: '300ms' 
+              }}
             >
               <Typography 
                 variant="h6" 
@@ -217,7 +216,7 @@ const Footer = () => {
                   }}
                 />
               </Box>
-            </motion.div>
+            </div>
           </Grid>
         </Grid>
         
@@ -241,7 +240,7 @@ const Footer = () => {
               textAlign: { xs: 'center', sm: 'left' },
             }}
           >
-            © {new Date().getFullYear()} EcoShop. All rights reserved.
+            © {new Date().getFullYear()} RecycleHub. All rights reserved.
           </Typography>
           
           <Box 
