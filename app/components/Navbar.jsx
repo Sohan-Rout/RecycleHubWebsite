@@ -44,7 +44,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Features', href: '#features' },
-    { name: 'How It Works', href: '#how-it-works' },
+    { name: 'HowItWorks', href: '#how-it-works' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -52,8 +52,12 @@ const Navbar = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} className="text-center p-4">
       <Box className="my-4 flex justify-center">
-        <Typography variant="h5" className="font-bold font-fredoka bg-gradient-to-r from-primary to-[#9370DB] bg-clip-text text-transparent flex items-center gap-2">
-          <ShoppingBagIcon fontSize="large" /> EcoShop
+        <Typography variant="h5" className="font-bold font-fredoka flex items-center gap-2">
+          <ShoppingBagIcon fontSize="large" /> 
+          <span>
+            <span className="text-green-600">Recycle</span>
+            <span className="text-black">Hub</span>
+          </span>
         </Typography>
       </Box>
       <List>
@@ -62,7 +66,7 @@ const Navbar = () => {
             <Link href={item.href} passHref>
               <ListItemText 
                 primary={item.name} 
-                className="text-center py-2 font-semibold hover:text-primary" 
+                className="text-center py-2 font-semibold text-white hover:text-green-500 transition-colors duration-300" 
               />
             </Link>
           </ListItem>
@@ -72,7 +76,7 @@ const Navbar = () => {
             variant="contained" 
             color="primary" 
             fullWidth
-            className="py-3 rounded-xl"
+            className="py-2 rounded-xl bg-blue-500 hover:bg-black transition-colors duration-300 text-sm"
           >
             Download App
           </Button>
@@ -84,32 +88,38 @@ const Navbar = () => {
   return (
     <AppBar 
       position="fixed" 
-      className={`transition-all duration-300 ease-in-out ${scrolled ? 'bg-opacity-80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
-      style={{ background: scrolled ? 'rgba(30, 30, 47, 0.8)' : 'transparent' }}
+      className={`transition-all duration-[100ms] ease-in-out ${scrolled ? 'bg-opacity-80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
+      style={{ background: scrolled ? '#F3F4F6' : 'transparent' }}
     >
       <Container maxWidth="lg">
         <Toolbar className="py-2">
           <Typography 
             variant="h5" 
             component="div" 
-            className="flex-grow font-bold font-fredoka bg-gradient-to-r from-primary to-[#9370DB] bg-clip-text text-transparent flex items-center gap-2 text-xl md:text-2xl"
+            className="flex-grow font-bold font-fredoka flex items-center gap-2 text-xl md:text-2xl"
           >
-            <ShoppingBagIcon fontSize="large" /> EcoShop
+            <ShoppingBagIcon fontSize="large" /> 
+            <span>
+              <span className="text-green-600">Recycle</span>
+              <span className="text-black">Hub</span>
+            </span>
           </Typography>
           
           <Box className="hidden md:flex gap-2 items-center">
             {navItems.map((item) => (
               <Link key={item.name} href={item.href} passHref>
-                <Button className="font-semibold relative overflow-hidden hover:after:translate-x-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-gradient-to-r from-primary to-[#9370DB] after:transform after:-translate-x-full after:transition-transform after:duration-300 after:ease-in-out">
+                <Button className={`font-semibold text-sm transition-colors duration-300 ${scrolled ? 'text-white' : 'text-blue-600'} hover:text-green-500`}>
                   {item.name}
                 </Button>
               </Link>
             ))}
-            <button 
-              className="ml-4 rounded-2xl shadow-lg bg-blue-500 text-white px-4 py-2 hover:bg-white hover:text-black hover:border hover:border-black"
+            <Button 
+              variant="contained" 
+              color="primary" 
+              className="ml-4 rounded-xl shadow-md bg-blue-500 text-white px-3 py-1.5 hover:bg-black transition-colors duration-300 text-sm"
             >
               Download App
-            </button>
+            </Button>
           </Box>
           
           <IconButton
@@ -129,7 +139,7 @@ const Navbar = () => {
         onClose={handleDrawerToggle}
         ModalProps={{ keepMounted: true }}
         className="md:hidden"
-        PaperProps={{ className: 'w-[280px]' }}
+        PaperProps={{ className: 'w-[280px] bg-blue-900' }}
       >
         {drawer}
       </Drawer>

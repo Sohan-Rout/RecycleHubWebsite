@@ -1,5 +1,4 @@
 import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -43,11 +42,9 @@ const HowItWorks = () => {
     >
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-100px" }}
+          <div
+            className="transition-all duration-500 ease-out"
+            style={{ opacity: 1, transform: 'translateY(0)' }}
           >
             <Typography 
               variant="overline" 
@@ -59,7 +56,7 @@ const HowItWorks = () => {
                 letterSpacing: 2,
               }}
             >
-              HOW ECOSHOP WORKS
+              HOW RECYCLEHUB WORKS
             </Typography>
             
             <Typography 
@@ -68,7 +65,7 @@ const HowItWorks = () => {
               sx={{ 
                 fontWeight: 800,
                 mb: 3,
-                background: 'linear-gradient(45deg, #4CAF50 30%, #9370DB 90%)',
+                background: 'linear-gradient(45deg, #4CAF50 30%, #1976D2 90%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
@@ -85,19 +82,21 @@ const HowItWorks = () => {
                 color: theme.palette.text.secondary,
               }}
             >
-              EcoShop makes sustainable shopping easy with our intuitive app that guides you through every step of your eco-friendly journey.
+              RecycleHub makes sustainable shopping easy with our intuitive app that guides you through every step of your eco-friendly journey.
             </Typography>
-          </motion.div>
+          </div>
         </Box>
         
         <Grid container spacing={6} alignItems="center">
           {steps.map((step, index) => (
             <Grid item xs={12} md={4} key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true, margin: "-50px" }}
+              <div
+                className="transition-all duration-500 ease-out"
+                style={{ 
+                  opacity: 1, 
+                  transform: 'translateY(0)',
+                  transitionDelay: `${index * 200}ms` 
+                }}
               >
                 <Box 
                   sx={{ 
@@ -191,7 +190,7 @@ const HowItWorks = () => {
                     {step.description}
                   </Typography>
                 </Box>
-              </motion.div>
+              </div>
             </Grid>
           ))}
         </Grid>
@@ -212,11 +211,9 @@ const HowItWorks = () => {
             textAlign: 'center',
           }}
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-50px" }}
+          <div
+            className="transition-all duration-500 ease-out"
+            style={{ opacity: 1, transform: 'translateY(0)' }}
           >
             <Typography 
               variant="h4" 
@@ -239,7 +236,7 @@ const HowItWorks = () => {
                 mx: 'auto',
               }}
             >
-              Download the EcoShop app today and join thousands of conscious consumers making a difference with every purchase.
+              Download the RecycleHub app today and join thousands of conscious consumers making a difference with every purchase.
             </Typography>
             
             <Box 
@@ -277,7 +274,7 @@ const HowItWorks = () => {
                 }}
               />
             </Box>
-          </motion.div>
+          </div>
         </Box>
       </Container>
     </Box>

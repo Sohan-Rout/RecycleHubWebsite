@@ -1,5 +1,4 @@
 import { Box, Container, Typography, Button, Grid, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import NatureIcon from '@mui/icons-material/Nature';
 import Image from 'next/image';
@@ -19,7 +18,7 @@ const Hero = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Animated background elements */}
+      {/* Cursor blur effect container */}
       <Box 
         className="cursor-blur"
         sx={{
@@ -32,39 +31,15 @@ const Hero = () => {
         }}
       />
       
-      {/* Floating elements */}
-      {[...Array(5)].map((_, i) => (
-        <motion.div
-          key={i}
-          style={{
-            position: 'absolute',
-            width: `${20 + Math.random() * 30}px`,
-            height: `${20 + Math.random() * 30}px`,
-            borderRadius: '50%',
-            background: `rgba(${isDarkMode ? '76, 175, 80' : '76, 175, 80'}, ${0.1 + Math.random() * 0.2})`,
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            zIndex: 0,
-          }}
-          animate={{
-            y: [0, -20, 0],
-            x: [0, Math.random() * 20 - 10, 0],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+            <Box
+              sx={{
+                opacity: 1,
+                transform: 'translateY(0)',
+                transition: 'opacity 0.8s, transform 0.8s',
+              }}
             >
               <Typography 
                 variant="overline" 
@@ -86,7 +61,7 @@ const Hero = () => {
                   fontWeight: 800,
                   fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
                   mb: 2,
-                  background: 'linear-gradient(45deg, #4CAF50 30%, #9370DB 90%)',
+                  background: 'linear-gradient(45deg, #4CAF50 30%, #1976D2 90%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   lineHeight: 1.2,
@@ -105,7 +80,7 @@ const Hero = () => {
                   maxWidth: '90%',
                 }}
               >
-                EcoShop helps you make sustainable choices with AI-powered product recommendations and environmental impact insights.
+                RecycleHub helps you make sustainable choices with AI-powered product recommendations and environmental impact insights.
               </Typography>
               
               <Box sx={{ display: 'flex', gap: 2, flexWrap: { xs: 'wrap', sm: 'nowrap' } }}>
@@ -114,9 +89,6 @@ const Hero = () => {
                   color="primary"
                   size="large"
                   startIcon={<ShoppingBagIcon />}
-                  component={motion.button}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   sx={{ 
                     py: 1.5, 
                     px: 3,
@@ -125,6 +97,13 @@ const Hero = () => {
                     boxShadow: '0 4px 14px rgba(76, 175, 80, 0.4)',
                     flex: { xs: '1 1 100%', sm: '0 1 auto' },
                     mb: { xs: 2, sm: 0 },
+                    transition: 'transform 0.3s',
+                    '&:hover': {
+                      transform: 'scale(1.05)'
+                    },
+                    '&:active': {
+                      transform: 'scale(0.95)'
+                    }
                   }}
                 >
                   Download App
@@ -135,9 +114,6 @@ const Hero = () => {
                   color="primary"
                   size="large"
                   startIcon={<NatureIcon />}
-                  component={motion.button}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   sx={{ 
                     py: 1.5, 
                     px: 3,
@@ -145,8 +121,13 @@ const Hero = () => {
                     fontWeight: 600,
                     borderWidth: '2px',
                     flex: { xs: '1 1 100%', sm: '0 1 auto' },
+                    transition: 'transform 0.3s',
                     '&:hover': {
                       borderWidth: '2px',
+                      transform: 'scale(1.05)'
+                    },
+                    '&:active': {
+                      transform: 'scale(0.95)'
                     }
                   }}
                 >
@@ -178,15 +159,18 @@ const Hero = () => {
                   </Typography>
                 </Box>
               </Box>
-            </motion.div>
+            </Box>
           </Grid>
           
           <Grid item xs={12} md={6}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              style={{ position: 'relative', height: '500px' }}
+            <Box
+              sx={{
+                position: 'relative',
+                height: '500px',
+                opacity: 1,
+                transform: 'scale(1)',
+                transition: 'opacity 0.8s, transform 0.8s',
+              }}
             >
               <Box
                 sx={{
@@ -210,7 +194,7 @@ const Hero = () => {
                 <Box
                   component="img"
                   src="/eco-shopping-app.png"
-                  alt="EcoShop App Interface"
+                  alt="RecycleHub App Interface"
                   sx={{
                     position: 'absolute',
                     top: '50%',
@@ -225,7 +209,7 @@ const Hero = () => {
                   }}
                 />
               </Box>
-            </motion.div>
+            </Box>
           </Grid>
         </Grid>
       </Container>

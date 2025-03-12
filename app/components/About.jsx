@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const About = () => {
   const teamMembers = [
     {
@@ -32,24 +30,19 @@ const About = () => {
     <section id="about" className="py-12 md:py-16 relative">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: '-100px' }}
-          >
+          <div className="transition-all duration-500 ease-out">
             <div className="mb-4">
               <span className="text-sm font-semibold tracking-wider text-primary uppercase">
                 OUR STORY
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-primary to-[#9370DB] bg-clip-text text-transparent">
-              About EcoShop
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              About RecycleHub
             </h2>
 
             <p className="text-lg text-textSecondary mb-6 leading-relaxed">
-              EcoShop was founded in 2023 with a simple mission: to make sustainable shopping accessible, convenient, and rewarding for everyone. We believe that small changes in shopping habits can lead to significant positive impacts on our planet.
+              RecycleHub was founded in 2023 with a simple mission: to make sustainable shopping accessible, convenient, and rewarding for everyone. We believe that small changes in shopping habits can lead to significant positive impacts on our planet.
             </p>
 
             <p className="text-lg text-textSecondary mb-6 leading-relaxed">
@@ -62,22 +55,17 @@ const About = () => {
                 Our vision is a world where every purchase decision is made with full awareness of its environmental impact, and where sustainable choices are the default, not the exception.
               </p>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: '-100px' }}
-          >
+          <div className="transition-all duration-500 ease-out">
             <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="/eco-team.jpg"
-                alt="EcoShop Team"
+                alt="RecycleHub Team"
                 className="w-full h-full object-cover"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="mt-16">
@@ -87,12 +75,10 @@ const About = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, margin: '-50px' }}
+                className="transition-all duration-500 ease-out"
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="text-center p-6 h-full rounded-xl bg-opacity-80 backdrop-blur-md border border-borderPrimary hover:-translate-y-2 transition-transform duration-300">
                   <img
@@ -110,7 +96,7 @@ const About = () => {
                     {member.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

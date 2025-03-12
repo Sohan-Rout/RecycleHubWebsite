@@ -1,5 +1,4 @@
 import { Box, Container, Grid, Typography, Card, CardContent, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import NatureIcon from '@mui/icons-material/Nature';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
@@ -12,11 +11,13 @@ const FeatureCard = ({ icon, title, description, index }) => {
   const isDarkMode = theme.palette.mode === 'dark';
   
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true, margin: "-50px" }}
+    <div
+      className="transition-all duration-500 ease-out"
+      style={{ 
+        opacity: 1, 
+        transform: 'translateY(0)',
+        transitionDelay: `${index * 100}ms` 
+      }}
     >
       <Card 
         elevation={0}
@@ -74,7 +75,7 @@ const FeatureCard = ({ icon, title, description, index }) => {
           </Typography>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   );
 };
 
@@ -143,11 +144,9 @@ const Features = () => {
       
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-100px" }}
+          <div
+            className="transition-all duration-500 ease-out"
+            style={{ opacity: 1, transform: 'translateY(0)' }}
           >
             <Typography 
               variant="overline" 
@@ -159,7 +158,7 @@ const Features = () => {
                 letterSpacing: 2,
               }}
             >
-              WHY CHOOSE ECOSHOP
+              WHY CHOOSE RECYCLEHUB
             </Typography>
             
             <Typography 
@@ -168,7 +167,7 @@ const Features = () => {
               sx={{ 
                 fontWeight: 800,
                 mb: 3,
-                background: 'linear-gradient(45deg, #4CAF50 30%, #9370DB 90%)',
+                background: 'linear-gradient(45deg, #4CAF50 30%, #1976D2 90%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
@@ -185,9 +184,9 @@ const Features = () => {
                 color: theme.palette.text.secondary,
               }}
             >
-              EcoShop combines cutting-edge AI technology with environmental consciousness to transform your shopping experience.
+              RecycleHub combines cutting-edge AI technology with environmental consciousness to transform your shopping experience.
             </Typography>
-          </motion.div>
+          </div>
         </Box>
         
         <Grid container spacing={4}>
