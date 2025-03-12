@@ -44,7 +44,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Features', href: '#features' },
-    { name: 'HowItWorks', href: '#how-it-works' },
+    { name: 'How It Works', href: '#how-it-works' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -91,14 +91,13 @@ const Navbar = () => {
       className={`transition-all duration-[100ms] ease-in-out ${scrolled ? 'bg-opacity-80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
       style={{ background: scrolled ? '#F3F4F6' : 'transparent' }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className='pt-1 pb-1'>
         <Toolbar className="py-2">
           <Typography 
             variant="h5" 
             component="div" 
-            className="flex-grow font-bold font-fredoka flex items-center gap-2 text-xl md:text-2xl"
+            className="flex-grow font-bold font-poppins flex items-center gap-2 text-xl md:text-2xl"
           >
-            <ShoppingBagIcon fontSize="large" /> 
             <span>
               <span className="text-green-600">Recycle</span>
               <span className="text-black">Hub</span>
@@ -108,7 +107,7 @@ const Navbar = () => {
           <Box className="hidden md:flex gap-2 items-center">
             {navItems.map((item) => (
               <Link key={item.name} href={item.href} passHref>
-                <Button className={`font-semibold text-sm transition-colors duration-300 ${scrolled ? 'text-white' : 'text-blue-600'} hover:text-green-500`}>
+                <Button className={`font-semibold font-poppins text-sm transition-colors duration-300 ${scrolled ? 'text-black' : 'text-blue-600'} hover:text-green-500 hover:underline decoration-green-500 decoration-10 underline-offset-8`}>
                   {item.name}
                 </Button>
               </Link>
@@ -116,7 +115,7 @@ const Navbar = () => {
             <Button 
               variant="contained" 
               color="primary" 
-              className="ml-4 rounded-xl shadow-md bg-blue-500 text-white px-3 py-1.5 hover:bg-black transition-colors duration-300 text-sm"
+              className="ml-4 rounded-xl font-poppins font-medium shadow-md bg-blue-500 text-white px-3 py-1.5 hover:bg-black transition-colors duration-300 text-sm"
             >
               Download App
             </Button>

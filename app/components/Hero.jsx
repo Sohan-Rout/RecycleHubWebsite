@@ -193,7 +193,7 @@ const Hero = () => {
               >
                 <Box
                   component="img"
-                  src="/eco-shopping-app.png"
+                  src="./HomePage.png"
                   alt="RecycleHub App Interface"
                   sx={{
                     position: 'absolute',

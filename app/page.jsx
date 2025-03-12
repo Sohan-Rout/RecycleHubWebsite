@@ -2,7 +2,7 @@
 import { Box, Container, Typography, Button, useTheme } from '@mui/material';
 import Head from 'next/head';
 import Navbar from './components/Navbar.jsx';
-import Hero from './components/Hero';
+import Hero from './components/Hero.jsx';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import About from './components/About.jsx';
