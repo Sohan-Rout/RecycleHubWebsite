@@ -106,7 +106,7 @@ const Navbar = () => {
               </Link>
             ))}
             <button 
-              className="ml-4 rounded-2xl shadow-lg bg-blue-500 text-white px-4 py-2 hover:bg-white hover:text-black hover:border hover:border-black"
+              className="ml-4 rounded-2xl shadow-lg bg-blue-500 border-blue-500 text-white px-4 py-2 hover:bg-white hover:text-black hover:border hover:border-black"
             >
               Download App
             </button>
