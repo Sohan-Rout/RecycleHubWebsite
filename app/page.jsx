@@ -2,11 +2,11 @@
 import { Box, Container, Typography, Button, useTheme } from '@mui/material';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
-import About from './components/About';
+import About from './components/About.jsx';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
