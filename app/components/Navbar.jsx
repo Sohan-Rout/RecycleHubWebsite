@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Container, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -107,18 +106,17 @@ const Navbar = () => {
               </Link>
             ))}
             <button 
-  className="ml-4 rounded-2xl shadow-lg bg-blue-500 text-white px-4 py-2 hover:bg-white hover:text-black hover:border hover:border-black"
->
-  Download App
-</button>
+              className="ml-4 rounded-2xl shadow-lg bg-blue-500 text-white px-4 py-2 hover:bg-white hover:text-black hover:border hover:border-black"
+            >
+              Download App
+            </button>
           </Box>
           
           <IconButton
-            color="inherit"
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
-            className="md:hidden"
+            className={`md:hidden ${scrolled ? 'text-white' : 'text-black'}`}
           >
             <MenuIcon />
           </IconButton>
