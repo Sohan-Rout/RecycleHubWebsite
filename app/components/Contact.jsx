@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react';
 import { Container, Typography, Box, Grid, TextField, Button, Paper, useTheme } from '@mui/material';
 import { Email, Phone, LocationOn, Send } from '@mui/icons-material';

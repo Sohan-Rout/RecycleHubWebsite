@@ -1,4 +1,5 @@
-import { Box, Container, Grid, Typography, Link, IconButton, useTheme } from '@mui/material';
+'use client'
+import { Box, Container, Grid, Typography, Link, IconButton } from '@mui/material';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -6,9 +7,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
-  const theme = useTheme();
-  const isDarkMode = theme.palette.mode === 'dark';
-  
   const footerLinks = [
     {
       title: 'Company',
@@ -44,11 +42,9 @@ const Footer = () => {
       component="footer" 
       sx={{ 
         py: { xs: 6, md: 8 },
-        background: isDarkMode 
-          ? 'linear-gradient(0deg, rgba(30, 30, 47, 1) 0%, rgba(30, 30, 47, 0.8) 100%)' 
-          : 'linear-gradient(0deg, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 0.8) 100%)',
         borderTop: '1px solid',
-        borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)',
+        borderColor: 'rgba(0, 0, 0, 0.1)', // Light mode border color
+        backgroundColor: '#ffffff', // Light mode background
       }}
     >
       <Container maxWidth="lg">
@@ -64,7 +60,7 @@ const Footer = () => {
                     sx={{ 
                       fontSize: 40, 
                       mr: 1,
-                      color: theme.palette.primary.main,
+                      color: '#4CAF50', // Primary color for light mode
                     }} 
                   />
                   <Typography 
@@ -84,7 +80,7 @@ const Footer = () => {
                   variant="body1" 
                   sx={{ 
                     mb: 3,
-                    color: theme.palette.text.secondary,
+                    color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
                     maxWidth: '300px',
                   }}
                 >
@@ -145,7 +141,7 @@ const Footer = () => {
                   sx={{ 
                     mb: 3, 
                     fontWeight: 700,
-                    color: theme.palette.text.primary,
+                    color: '#000000', // Light mode text color
                   }}
                 >
                   {section.title}
@@ -158,10 +154,10 @@ const Footer = () => {
                         href={link.href} 
                         underline="none"
                         sx={{ 
-                          color: theme.palette.text.secondary,
+                          color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
                           transition: 'all 0.3s ease',
                           '&:hover': {
-                            color: theme.palette.primary.main,
+                            color: '#4CAF50', // Primary color for light mode
                             pl: 0.5,
                           }
                         }}
@@ -190,7 +186,7 @@ const Footer = () => {
                 sx={{ 
                   mb: 3, 
                   fontWeight: 700,
-                  color: theme.palette.text.primary,
+                  color: '#000000', // Light mode text color
                 }}
               >
                 Download
@@ -203,7 +199,6 @@ const Footer = () => {
                   alt="Download on App Store" 
                   sx={{ 
                     height: 40,
-                    filter: isDarkMode ? 'brightness(0.8)' : 'none',
                   }}
                 />
                 <Box 
@@ -212,7 +207,6 @@ const Footer = () => {
                   alt="Get it on Google Play" 
                   sx={{ 
                     height: 40,
-                    filter: isDarkMode ? 'brightness(0.8)' : 'none',
                   }}
                 />
               </Box>
@@ -225,7 +219,7 @@ const Footer = () => {
             mt: 6, 
             pt: 3, 
             borderTop: '1px solid',
-            borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)',
+            borderColor: 'rgba(0, 0, 0, 0.1)', // Light mode border color
             display: 'flex',
             flexDirection: { xs: 'column', sm: 'row' },
             justifyContent: 'space-between',
@@ -236,7 +230,7 @@ const Footer = () => {
           <Typography 
             variant="body2" 
             sx={{ 
-              color: theme.palette.text.secondary,
+              color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
               textAlign: { xs: 'center', sm: 'left' },
             }}
           >
@@ -255,11 +249,11 @@ const Footer = () => {
               href="#" 
               underline="none"
               sx={{ 
-                color: theme.palette.text.secondary,
+                color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
                 fontSize: '0.875rem',
                 transition: 'color 0.3s ease',
                 '&:hover': {
-                  color: theme.palette.primary.main,
+                  color: '#4CAF50', // Primary color for light mode
                 }
               }}
             >
@@ -269,11 +263,11 @@ const Footer = () => {
               href="#" 
               underline="none"
               sx={{ 
-                color: theme.palette.text.secondary,
+                color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
                 fontSize: '0.875rem',
                 transition: 'color 0.3s ease',
                 '&:hover': {
-                  color: theme.palette.primary.main,
+                  color: '#4CAF50', // Primary color for light mode
                 }
               }}
             >
@@ -283,11 +277,11 @@ const Footer = () => {
               href="#" 
               underline="none"
               sx={{ 
-                color: theme.palette.text.secondary,
+                color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
                 fontSize: '0.875rem',
                 transition: 'color 0.3s ease',
                 '&:hover': {
-                  color: theme.palette.primary.main,
+                  color: '#4CAF50', // Primary color for light mode
                 }
               }}
             >

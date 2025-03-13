@@ -1,3 +1,4 @@
+'use client'
 import { Box, Container, Grid, Typography, Card, CardContent, useTheme } from '@mui/material';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import NatureIcon from '@mui/icons-material/Nature';

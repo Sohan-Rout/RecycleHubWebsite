@@ -1,3 +1,4 @@
+'use client'
 import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
