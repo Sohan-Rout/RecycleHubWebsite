@@ -52,7 +52,7 @@ const Navbar = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} className="text-center p-4">
       <Box className="my-4 flex justify-center">
-        <Typography variant="h5" className="font-bold font-fredoka flex items-center gap-2">
+        <Typography variant="h5" className="font-bold font-poppins flex items-center gap-2">
           <ShoppingBagIcon fontSize="large" /> 
           <span>
             <span className="text-green-600">Recycle</span>
@@ -66,7 +66,7 @@ const Navbar = () => {
             <Link href={item.href} passHref>
               <ListItemText 
                 primary={item.name} 
-                className="text-center py-2 font-semibold text-white hover:text-green-500 transition-colors duration-300" 
+                className="text-center py-2 font-semibold text-gray-800 hover:text-green-500 transition-colors duration-300" 
               />
             </Link>
           </ListItem>
@@ -88,8 +88,17 @@ const Navbar = () => {
   return (
     <AppBar 
       position="fixed" 
-      className={`transition-all duration-[100ms] ease-in-out ${scrolled ? 'bg-opacity-80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
-      style={{ background: scrolled ? '#F3F4F6' : 'transparent' }}
+      className={`transition-all duration-[100ms] ease-in-out ${scrolled ? 'bg-opacity-90 backdrop-blur-md shadow-lg' : 'md:bg-transparent'}`}
+      style={{ 
+        background: scrolled ? '#F3F4F6' : 'rgba(255, 255, 255, 0.9)',
+        boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : 'none'
+      }}
+      sx={{
+        '@media (max-width: 768px)': {
+          background: '#F3F4F6',
+          backdropFilter: 'blur(10px)',
+        }
+      }}
     >
       <Container maxWidth="lg" className='pt-1 pb-1'>
         <Toolbar className="py-2">
@@ -107,7 +116,7 @@ const Navbar = () => {
           <Box className="hidden md:flex gap-2 items-center">
             {navItems.map((item) => (
               <Link key={item.name} href={item.href} passHref>
-                <Button className={`font-semibold font-poppins text-sm transition-colors duration-300 ${scrolled ? 'text-black' : 'text-blue-600'} hover:text-green-500 hover:underline decoration-green-500 decoration-10 underline-offset-8`}>
+                <Button className={`font-semibold font-poppins text-sm transition-colors duration-300 ${scrolled ? 'text-gray-800' : 'text-blue-600'} hover:text-green-500 hover:underline decoration-green-500 decoration-10 underline-offset-8`}>
                   {item.name}
                 </Button>
               </Link>
@@ -125,7 +134,7 @@ const Navbar = () => {
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
-            className={`md:hidden ${scrolled ? 'text-white' : 'text-black'}`}
+            className="md:hidden text-black"
           >
             <MenuIcon />
           </IconButton>
@@ -138,7 +147,12 @@ const Navbar = () => {
         onClose={handleDrawerToggle}
         ModalProps={{ keepMounted: true }}
         className="md:hidden"
-        PaperProps={{ className: 'w-[280px] bg-blue-900' }}
+        PaperProps={{ 
+          className: 'w-[280px] bg-white shadow-xl',
+          sx: {
+            boxShadow: '-5px 0 20px rgba(0, 0, 0, 0.1)'
+          }
+        }}
       >
         {drawer}
       </Drawer>

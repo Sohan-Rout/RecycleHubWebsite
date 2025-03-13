@@ -8,7 +8,12 @@ const Hero = () => {
     <Box 
       component="section" 
       id="hero" 
-      className="pt-12 md:pt-[10vw] pb-8 md:pb-[8vw] relative overflow-hidden"
+      sx={{ 
+        pt: { xs: 20, md: '10vw' },
+        pb: { xs: 8, md: '8vw' },
+        position: 'relative',
+        overflow: 'hidden',
+      }}
     >
       <Container maxWidth="lg" className="px-4">
         <Grid container spacing={4} alignItems="center">
