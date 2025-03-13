@@ -1,18 +1,18 @@
 'use client'
-import { Box, Container, Typography, Button, useTheme } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import Head from 'next/head';
-import Navbar from './components/Navbar.jsx';
-import Hero from './components/Hero.jsx';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import About from './components/About.jsx';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { lazy, Suspense } from 'react'; // Import lazy and Suspense
+
+// Lazy load all components
+const Navbar = lazy(() => import('./components/Navbar.jsx'));
+const Hero = lazy(() => import('./components/Hero.jsx'));
+const Features = lazy(() => import('./components/Features'));
+const HowItWorks = lazy(() => import('./components/HowItWorks'));
+const About = lazy(() => import('./components/About.jsx'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function Home() {
-  const theme = useTheme();
-  const isDarkMode = theme.palette.mode === 'dark';
-
   return (
     <>
       <Head>
@@ -45,14 +45,35 @@ export default function Home() {
           }}
         />
 
-        <Navbar />
-        <Hero />
-        <Features />
-        <HowItWorks />
-        <About />
-        <Contact />
-        <Footer />
+        {/* Wrap each lazy-loaded component in Suspense */}
+        <Suspense fallback={<div>Loading Navbar...</div>}>
+          <Navbar />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading Hero...</div>}>
+          <Hero />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading Features...</div>}>
+          <Features />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading How It Works...</div>}>
+          <HowItWorks />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading About...</div>}>
+          <About />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading Contact...</div>}>
+          <Contact />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading Footer...</div>}>
+          <Footer />
+        </Suspense>
       </Box>
     </>
   );
-} 
+}
