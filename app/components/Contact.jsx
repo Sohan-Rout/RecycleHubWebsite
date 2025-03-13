@@ -51,7 +51,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-12 md:py-16 bg-gray-50 relative">
+    <section id="contact" className="py-12 md:py-16 bg-white relative">
       {/* Decorative bubbles */}
       <div className="absolute w-20 h-20 bg-green-100 rounded-full top-20 left-10 opacity-50"></div>
       <div className="absolute w-24 h-24 bg-purple-100 rounded-full bottom-20 right-10 opacity-50"></div>

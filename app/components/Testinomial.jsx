@@ -1,3 +1,5 @@
+'use client'
+
 const Testimonial = () => {
   return (
     <section id="testimonial" className="py-12 md:py-16 bg-white">
