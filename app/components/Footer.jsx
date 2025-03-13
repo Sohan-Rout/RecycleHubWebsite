@@ -1,6 +1,5 @@
 'use client'
 import { Box, Container, Grid, Typography, Link, IconButton } from '@mui/material';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -40,59 +39,31 @@ const Footer = () => {
   return (
     <Box 
       component="footer" 
-      sx={{ 
-        py: { xs: 6, md: 8 },
-        borderTop: '1px solid',
-        borderColor: 'rgba(0, 0, 0, 0.1)', // Light mode border color
-        backgroundColor: '#ffffff', // Light mode background
-      }}
+      className="py-12 md:py-16 border-t border-gray-200 bg-white font-poppins"
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className="px-4">
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <Box sx={{ mb: 4 }}>
-              <div
-                className="transition-all duration-500 ease-out"
-                style={{ opacity: 1, transform: 'translateY(0)' }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  <ShoppingBagIcon 
-                    sx={{ 
-                      fontSize: 40, 
-                      mr: 1,
-                      color: '#4CAF50', // Primary color for light mode
-                    }} 
-                  />
-                  <Typography 
-                    variant="h4" 
-                    component="div" 
-                    sx={{ 
-                      fontWeight: 800,
-                      fontFamily: '"Fredoka One", cursive',
-                    }}
-                  >
-                    <span style={{ color: '#4CAF50' }}>Recycle</span>
-                    <span style={{ color: '#1976D2' }}>Hub</span>
-                  </Typography>
-                </Box>
-                
+            <Box className="mb-8">
+              <div className="transition-all duration-500 ease-out opacity-100 translate-y-0">
+                <div>
+                  <h1 className="font-semibold text-green-600 text-2xl">
+                    Recyle<span className="text-black">Hub</span>
+                  </h1>
+                </div>
                 <Typography 
                   variant="body1" 
-                  sx={{ 
-                    mb: 3,
-                    color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
-                    maxWidth: '300px',
-                  }}
+                  className="mb-6 text-gray-700 max-w-[300px] font-poppins"
                 >
                   Making sustainable shopping accessible and rewarding for everyone. Join our community of eco-conscious consumers.
                 </Typography>
                 
-                <Box sx={{ display: 'flex', gap: 1 }}>
+                <Box className="flex gap-2">
                   <IconButton 
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    color="inherit"
+                    className="text-gray-700 hover:text-green-600"
                   >
                     <GitHubIcon />
                   </IconButton>
@@ -100,7 +71,7 @@ const Footer = () => {
                     href="https://twitter.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    color="inherit"
+                    className="text-gray-700 hover:text-green-600"
                   >
                     <TwitterIcon />
                   </IconButton>
@@ -108,7 +79,7 @@ const Footer = () => {
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    color="inherit"
+                    className="text-gray-700 hover:text-green-600"
                   >
                     <InstagramIcon />
                   </IconButton>
@@ -116,7 +87,7 @@ const Footer = () => {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    color="inherit"
+                    className="text-gray-700 hover:text-green-600"
                   >
                     <LinkedInIcon />
                   </IconButton>
@@ -128,39 +99,24 @@ const Footer = () => {
           {footerLinks.map((section, index) => (
             <Grid item xs={12} sm={6} md={2} key={index}>
               <div
-                className="transition-all duration-500 ease-out"
-                style={{ 
-                  opacity: 1, 
-                  transform: 'translateY(0)',
-                  transitionDelay: `${index * 100}ms` 
-                }}
+                className="transition-all duration-500 ease-out opacity-100 translate-y-0"
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <Typography 
                   variant="h6" 
                   component="h3" 
-                  sx={{ 
-                    mb: 3, 
-                    fontWeight: 700,
-                    color: '#000000', // Light mode text color
-                  }}
+                  className="mb-6 font-bold text-black font-poppins"
                 >
                   {section.title}
                 </Typography>
                 
-                <Box component="ul" sx={{ p: 0, m: 0, listStyle: 'none' }}>
+                <Box component="ul" className="p-0 m-0 list-none">
                   {section.links.map((link, i) => (
-                    <Box component="li" key={i} sx={{ mb: 1.5 }}>
+                    <Box component="li" key={i} className="mb-3">
                       <Link 
                         href={link.href} 
                         underline="none"
-                        sx={{ 
-                          color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
-                          transition: 'all 0.3s ease',
-                          '&:hover': {
-                            color: '#4CAF50', // Primary color for light mode
-                            pl: 0.5,
-                          }
-                        }}
+                        className="text-gray-700 hover:text-green-600 transition-all duration-300 ease-in-out font-poppins hover:pl-2"
                       >
                         {link.name}
                       </Link>
@@ -170,120 +126,39 @@ const Footer = () => {
               </div>
             </Grid>
           ))}
-          
-          <Grid item xs={12} md={2}>
-            <div
-              className="transition-all duration-500 ease-out"
-              style={{ 
-                opacity: 1, 
-                transform: 'translateY(0)',
-                transitionDelay: '300ms' 
-              }}
-            >
-              <Typography 
-                variant="h6" 
-                component="h3" 
-                sx={{ 
-                  mb: 3, 
-                  fontWeight: 700,
-                  color: '#000000', // Light mode text color
-                }}
-              >
-                Download
-              </Typography>
-              
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <Box 
-                  component="img" 
-                  src="/app-store-badge.png" 
-                  alt="Download on App Store" 
-                  sx={{ 
-                    height: 40,
-                  }}
-                />
-                <Box 
-                  component="img" 
-                  src="/google-play-badge.png" 
-                  alt="Get it on Google Play" 
-                  sx={{ 
-                    height: 40,
-                  }}
-                />
-              </Box>
-            </div>
-          </Grid>
         </Grid>
         
         <Box 
-          sx={{ 
-            mt: 6, 
-            pt: 3, 
-            borderTop: '1px solid',
-            borderColor: 'rgba(0, 0, 0, 0.1)', // Light mode border color
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            justifyContent: 'space-between',
-            alignItems: { xs: 'center', sm: 'flex-start' },
-            gap: 2,
-          }}
+          className="mt-12 pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center sm:items-start gap-4"
         >
           <Typography 
             variant="body2" 
-            sx={{ 
-              color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
-              textAlign: { xs: 'center', sm: 'left' },
-            }}
+            className="text-gray-700 text-center sm:text-left font-poppins"
           >
             © {new Date().getFullYear()} RecycleHub. All rights reserved.
           </Typography>
           
           <Box 
-            sx={{ 
-              display: 'flex', 
-              gap: 3,
-              flexWrap: 'wrap',
-              justifyContent: { xs: 'center', sm: 'flex-start' },
-            }}
+            className="flex gap-6 flex-wrap justify-center sm:justify-start"
           >
             <Link 
               href="#" 
               underline="none"
-              sx={{ 
-                color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
-                fontSize: '0.875rem',
-                transition: 'color 0.3s ease',
-                '&:hover': {
-                  color: '#4CAF50', // Primary color for light mode
-                }
-              }}
+              className="text-gray-700 text-sm hover:text-green-600 transition-all duration-300 ease-in-out font-poppins"
             >
               Privacy Policy
             </Link>
             <Link 
               href="#" 
               underline="none"
-              sx={{ 
-                color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
-                fontSize: '0.875rem',
-                transition: 'color 0.3s ease',
-                '&:hover': {
-                  color: '#4CAF50', // Primary color for light mode
-                }
-              }}
+              className="text-gray-700 text-sm hover:text-green-600 transition-all duration-300 ease-in-out font-poppins"
             >
               Terms of Service
             </Link>
             <Link 
               href="#" 
               underline="none"
-              sx={{ 
-                color: 'rgba(0, 0, 0, 0.7)', // Light mode text color
-                fontSize: '0.875rem',
-                transition: 'color 0.3s ease',
-                '&:hover': {
-                  color: '#4CAF50', // Primary color for light mode
-                }
-              }}
+              className="text-gray-700 text-sm hover:text-green-600 transition-all duration-300 ease-in-out font-poppins"
             >
               Cookie Policy
             </Link>
