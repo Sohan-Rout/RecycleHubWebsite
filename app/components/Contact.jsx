@@ -4,10 +4,12 @@ import { Email, Phone, LocationOn, Send } from '@mui/icons-material';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
+import { Button } from '@mui/material';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     message: '',
   });
@@ -24,7 +26,7 @@ const Contact = () => {
     e.preventDefault();
     console.log(formData); // Handle form submission here
     alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ firstName: '', lastName: '', email: '', message: '' });
   };
 
   const contactInfo = [
@@ -71,8 +73,8 @@ const Contact = () => {
         {/* Contact Form and Info Section */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white p-8 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-100">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">
-              Send Us a Message
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Drop Us a Message
             </h3>
 
             <form onSubmit={handleSubmit}>
@@ -83,8 +85,8 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     required
@@ -96,8 +98,8 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="lastName"
+                    value={formData.lastName}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     required
@@ -143,17 +145,19 @@ const Contact = () => {
                   onChange={handleChange}
                   rows="4"
                   className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  placeholder="Enter your message here"
                   required
                 ></textarea>
               </div>
 
-              <div className="mt-8">
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition-all transform hover:scale-105 active:scale-95"
+              <div className="mt-8 flex justify-center">
+                <Button 
+                  variant="contained" 
+                  color="primary" 
+                  className="py-2 rounded-xl bg-green-600 hover:bg-black transition-colors duration-300 text-sm text-white"
                 >
                   Send Message
-                </button>
+                </Button>
               </div>
             </form>
           </div>
