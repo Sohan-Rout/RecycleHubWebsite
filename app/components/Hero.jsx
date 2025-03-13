@@ -48,7 +48,7 @@ const Hero = () => {
               
               <Box className="flex gap-2 flex-wrap sm:flex-nowrap justify-center">
                 <Button 
-                  className="bg-blue-500 text-white hover:bg-blue-600 rounded-lg font-poppins font-semibold py-3 px-6 md:py-[1vw] md:px-[3vw] flex-1 sm:flex-none mb-2 sm:mb-0 transition-transform duration-300 hover:scale-105 active:scale-95 shadow-lg"
+                  className="bg-blue-500 text-white hover:bg-blue-600 rounded-lg mr-1 font-poppins font-semibold py-3 px-6 md:py-[1vw] md:px-[3vw] flex-1 sm:flex-none mb-2 sm:mb-0 transition-transform duration-300 hover:scale-105 active:scale-95 shadow-lg"
                   variant="contained" 
                   size="large"
                 >
@@ -60,7 +60,7 @@ const Hero = () => {
                   color="primary"
                   size="large"
                   startIcon={<NatureIcon className="animate-pulse" />}
-                  className="py-3 px-6 md:py-[1.5vw] md:px-[3vw] rounded-lg font-poppins font-semibold border-2 flex-1 sm:flex-none transition-transform duration-300 hover:scale-105 active:scale-95"
+                  className="py-3 px-6 md:py-[1.5vw] md:px-[3vw] rounded-lg ml-1 font-poppins font-semibold border-2 flex-1 sm:flex-none transition-transform duration-300 hover:scale-105 active:scale-95"
                 >
                   Learn More
                 </Button>
