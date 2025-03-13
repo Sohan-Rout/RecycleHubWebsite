@@ -5,12 +5,13 @@ const Hero = () => {
   const theme = useTheme();
 
   return (
+    <div className='w-full'>
     <Box 
       component="section" 
       id="hero" 
       sx={{ 
-        pt: { xs: 12, md: 16 }, 
-        pb: { xs: 8, md: 12 },
+        pt: { xs: 12, md: '10vw' }, // Scale padding for larger screens
+        pb: { xs: 8, md: '8vw' },
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -42,6 +43,7 @@ const Hero = () => {
                 className='font-poppins mb-2 text-black text-center font-semibold tracking-[0.25rem]'
                 variant="overline" 
                 component="div"
+                sx={{ fontSize: { xs: '0.75rem', md: '1vw' } }} // Scale font size
               >
                 SUSTAINABLE SHOPPING MADE EASY
               </Typography>
@@ -51,7 +53,7 @@ const Hero = () => {
                 component="h1"
                 className='font-poppins font-extrabold md:text-center'
                 sx={{ 
-                  fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
+                  fontSize: 'clamp(2.5rem, 4.5vw, 6rem)', // Scale font size dynamically
                   mb: 2,
                   background: 'linear-gradient(45deg, #4CAF50 30%, #1976D2 90%)',
                   WebkitBackgroundClip: 'text',
@@ -69,6 +71,7 @@ const Hero = () => {
                 sx={{ 
                   mb: 4, 
                   fontWeight: 400,
+                  fontSize: { xs: '1rem', md: '1.5vw' }, // Scale font size
                 }}
               >
                 RecycleHub helps you make sustainable choices with AI-powered product recommendations and environmental impact insights.
@@ -80,8 +83,8 @@ const Hero = () => {
                   variant="contained" 
                   size="large"
                   sx={{ 
-                    py: 1.5, 
-                    px: 3,
+                    py: { xs: 1.5, md: '1vw' }, // Scale padding
+                    px: { xs: 3, md: '3vw' },
                     borderRadius: '12px',
                     fontWeight: 600,
                     boxShadow: '0 4px 14px rgba(76, 175, 80, 0.4)',
@@ -105,8 +108,8 @@ const Hero = () => {
                   size="large"
                   startIcon={<NatureIcon className='animate-pulse'/>}
                   sx={{ 
-                    py: 1.5, 
-                    px: 3,
+                    py: { xs: 1.5, md: '1.5vw' }, // Scale padding
+                    px: { xs: 3, md: '3vw' },
                     borderRadius: '12px',
                     fontWeight: 600,
                     borderWidth: '2px',
@@ -131,7 +134,7 @@ const Hero = () => {
             <Box
               sx={{
                 position: 'relative',
-                height: '500px',
+                height: { xs: '300px', md: '40vw' }, // Scale container height
                 opacity: 1,
                 transform: 'scale(1)',
                 transition: 'opacity 0.8s, transform 0.8s',
@@ -165,8 +168,8 @@ const Hero = () => {
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    maxWidth: '90%',
-                    maxHeight: '90%',
+                    width: { xs: '70%', md: '60%', lg: '60%' }, // Scale image width
+                    height: '100%', // Maintain aspect ratio
                     objectFit: 'contain',
                     borderRadius: '24px',
                     boxShadow: '0 20px 80px rgba(0,0,0,0.2)',
@@ -179,6 +182,7 @@ const Hero = () => {
         </Grid>
       </Container>
     </Box>
+    </div>
   );
 };
 
