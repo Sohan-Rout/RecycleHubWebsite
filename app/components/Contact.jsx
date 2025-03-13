@@ -1,16 +1,12 @@
 'use client';
 import { useState } from 'react';
-import { Email, Phone, LocationOn, Send } from '@mui/icons-material';
-import EmailIcon from '@mui/icons-material/Email';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PhoneIcon from '@mui/icons-material/Phone';
-import { Button } from '@mui/material';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
+    subject: '',
     message: '',
   });
 
@@ -26,29 +22,8 @@ const Contact = () => {
     e.preventDefault();
     console.log(formData); // Handle form submission here
     alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ firstName: '', lastName: '', email: '', message: '' });
+    setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
   };
-
-  const contactInfo = [
-    {
-      icon: <EmailIcon className="text-3xl text-green-600" />,
-      title: 'Email Us',
-      details: 'hello@recyclehub.com',
-      color: '#4CAF50',
-    },
-    {
-      icon: <LocationOnIcon className="text-3xl text-purple-600" />,
-      title: 'Visit Us',
-      details: '123 Eco Street, Green City, 10001',
-      color: '#9370DB',
-    },
-    {
-      icon: <PhoneIcon className="text-3xl text-green-600" />,
-      title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      color: '#4CAF50',
-    },
-  ];
 
   return (
     <section id="contact" className="py-12 md:py-16 bg-white relative">
@@ -151,13 +126,12 @@ const Contact = () => {
               </div>
 
               <div className="mt-8 flex justify-center">
-                <Button 
-                  variant="contained" 
-                  color="primary" 
-                  className="py-2 rounded-xl bg-green-600 hover:bg-black transition-colors duration-300 text-sm text-white"
+                <button
+                  type="submit"
+                  className="px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 transition-colors duration-300 text-sm text-white font-semibold"
                 >
                   Send Message
-                </Button>
+                </button>
               </div>
             </form>
           </div>
