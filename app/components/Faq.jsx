@@ -33,7 +33,7 @@ const Faq = () => {
 
     return (
       <div>
-        <div className="mt-10">
+        <div className="mt-10" id="Faq">
           <h2 className="text-6xl font-semibold font-poppins text-center mb-10 bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent leading-tight">
             FAQ's
           </h2>

@@ -49,8 +49,8 @@ const Navbar = () => {
   const navItems = [
     { name: 'Features', href: '#features' },
     { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Testinomial', href: '#testimonial' },
-    { name: 'FAQ', href: '#Faq'},
+    { name: 'Testinomial', href: '#testinomial' },
+    { name: 'FAQ\'s', href: '#Faq'},
     { name: 'Contact', href: '#contact' },
     
   ];
@@ -60,10 +60,12 @@ const Navbar = () => {
       <Box className="my-4 flex justify-center">
         <Typography variant="h5" className="font-bold font-poppins flex items-center gap-2">
           <ShoppingBagIcon fontSize="large" /> 
+          <a href='#'>
           <span>
             <span className="text-green-600">Recycle</span>
             <span className="text-black">Hub</span>
           </span>
+          </a>
         </Typography>
       </Box>
       <List>
