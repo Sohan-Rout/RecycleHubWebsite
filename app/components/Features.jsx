@@ -1,76 +1,38 @@
 'use client'
-import { Box, Container, Grid, Typography, Card, CardContent, useTheme } from '@mui/material';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import NatureIcon from '@mui/icons-material/Nature';
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import VerifiedIcon from '@mui/icons-material/Verified';
+import { Box, Container, Grid, Typography, Card, CardContent } from '@mui/material';
+import SmartToyIcon from '@mui/icons-material/SmartToy';
+import PublicIcon from '@mui/icons-material/Public';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
+import CableIcon from '@mui/icons-material/Cable';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
 const FeatureCard = ({ icon, title, description, index }) => {
-  const theme = useTheme();
-  const isDarkMode = theme.palette.mode === 'dark';
-  
   return (
     <div
-      className="transition-all duration-500 ease-out"
-      style={{ 
-        opacity: 1, 
-        transform: 'translateY(0)',
-        transitionDelay: `${index * 100}ms` 
-      }}
+      className="transition-all duration-500 ease-out opacity-100 translate-y-0"
+      style={{ transitionDelay: `${index * 100}ms` }}
     >
       <Card 
         elevation={0}
-        sx={{ 
-          height: '100%',
-          borderRadius: '24px',
-          p: 2,
-          background: isDarkMode 
-            ? 'rgba(30, 30, 47, 0.5)' 
-            : 'rgba(255, 255, 255, 0.8)',
-          backdropFilter: 'blur(10px)',
-          border: '1px solid',
-          borderColor: isDarkMode 
-            ? 'rgba(255, 255, 255, 0.1)' 
-            : 'rgba(0, 0, 0, 0.05)',
-          transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-          '&:hover': {
-            transform: 'translateY(-8px)',
-            boxShadow: isDarkMode 
-              ? '0 10px 30px rgba(0, 0, 0, 0.5)' 
-              : '0 10px 30px rgba(0, 0, 0, 0.1)',
-          }
-        }}
+        className="h-[20rem] rounded-3xl p-4 bg-white/80 backdrop-blur-lg border border-gray-200 hover:-translate-y-2 hover:shadow-lg transition-transform duration-300 ease-in-out flex flex-col justify-center items-center text-center"
       >
-        <CardContent sx={{ p: 3 }}>
+        <CardContent className="p-6 flex flex-col items-center">
           <Box 
-            sx={{ 
-              display: 'inline-flex',
-              p: 2,
-              borderRadius: '16px',
-              mb: 2,
-              background: 'linear-gradient(45deg, rgba(76, 175, 80, 0.1) 0%, rgba(147, 112, 219, 0.1) 100%)',
-              color: theme.palette.primary.main,
-            }}
+            className="inline-flex p-3 rounded-xl mb-4 bg-gradient-to-r from-green-50 to-purple-50"
           >
             {icon}
           </Box>
           <Typography 
             variant="h5" 
             component="h3" 
-            sx={{ 
-              mb: 2, 
-              fontWeight: 700,
-              color: theme.palette.text.primary,
-            }}
+            className="mb-4 font-bold text-black"
           >
             {title}
           </Typography>
           <Typography 
             variant="body1" 
-            color="text.secondary"
-            sx={{ lineHeight: 1.7 }}
+            className="text-gray-600 leading-relaxed"
           >
             {description}
           </Typography>
@@ -81,39 +43,36 @@ const FeatureCard = ({ icon, title, description, index }) => {
 };
 
 const Features = () => {
-  const theme = useTheme();
-  const isDarkMode = theme.palette.mode === 'dark';
-  
   const features = [
     {
-      icon: <ShoppingBagIcon fontSize="large" />,
-      title: "Eco-Friendly Products",
-      description: "Discover a curated selection of sustainable products that minimize environmental impact while meeting your everyday needs."
+      icon: <SmartToyIcon fontSize="large" className='text-purple-600' />,
+      title: "AI-Powered Item Recognition",
+      description: "Use image recognition and barcode scanning to instantly identify whether an item is recyclable."
     },
     {
-      icon: <NatureIcon fontSize="large" />,
-      title: "Carbon Footprint Tracking",
-      description: "Monitor the environmental impact of your purchases with our real-time carbon footprint tracker and set personal sustainability goals."
+      icon: <PublicIcon fontSize="large" className='text-purple-600' />,
+      title: "Eco-Friendly Shopping Hub",
+      description: "A dedicated section showcasing verified eco-friendly products."
     },
     {
-      icon: <LocalOfferIcon fontSize="large" />,
-      title: "Green Discounts",
-      description: "Enjoy exclusive discounts on eco-friendly products and services from our network of sustainable partners."
+      icon: <LocationCityIcon fontSize="large" className='text-purple-600' />,
+      title: "Nearby Recycling Centers",
+      description: "Map-based locator showing the nearest recycling centers with Live status updates (open/closed, peak hours, special collection days)."
     },
     {
-      icon: <BarChartIcon fontSize="large" />,
-      title: "Impact Analytics",
-      description: "Visualize your sustainability journey with detailed analytics that show how your shopping habits are making a difference."
+      icon: <CableIcon fontSize="large" className='text-purple-600' />,
+      title: "Electronic Waste Disposal Service",
+      description: "On-demand pickup service for old electronics (phones, laptops, batteries, appliances)."
     },
     {
-      icon: <ShoppingCartIcon fontSize="large" />,
-      title: "Smart Shopping Lists",
-      description: "Create AI-powered shopping lists that automatically suggest eco-friendly alternatives to your regular products."
+      icon: <EmojiEventsIcon fontSize="large" className='text-purple-600' />,
+      title: "Rewards System",
+      description: "Affiliate partnerships with green brands for commissions or discounts. Rewards for responsible disposal."
     },
     {
-      icon: <VerifiedIcon fontSize="large" />,
-      title: "Certification Verification",
-      description: "Easily verify product sustainability certifications and understand what they mean for the environment."
+      icon: <TipsAndUpdatesIcon fontSize="large" className='text-purple-600' />,
+      title: "Eco-News & Tips Section",
+      description: "Daily recycling tips, sustainability hacks, and industry news to educate users. Short interactive quizzes on eco-conscious living."
     }
   ];
 
@@ -121,43 +80,22 @@ const Features = () => {
     <Box 
       component="section" 
       id="features" 
-      sx={{ 
-        py: { xs: 8, md: 12 },
-        position: 'relative',
-        overflow: 'hidden',
-      }}
+      className="py-12 md:py-16 relative overflow-hidden"
     >
       {/* Background elements */}
       <Box 
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          opacity: 0.5,
-          background: isDarkMode 
-            ? 'radial-gradient(circle at 20% 30%, rgba(76, 175, 80, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(147, 112, 219, 0.1) 0%, transparent 40%)'
-            : 'radial-gradient(circle at 20% 30%, rgba(76, 175, 80, 0.1) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(147, 112, 219, 0.05) 0%, transparent 40%)',
-          zIndex: -1,
-        }}
+        className="absolute top-0 left-0 w-full h-full opacity-50 bg-[radial-gradient(circle_at_20%_30%,rgba(76,175,80,0.1)_0%,transparent_40%),radial-gradient(circle_at_80%_70%,rgba(147,112,219,0.05)_0%,transparent_40%)] -z-10"
       />
       
-      <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
+      <Container maxWidth="lg" className="px-4">
+        <Box className="text-center mb-12">
           <div
-            className="transition-all duration-500 ease-out"
-            style={{ opacity: 1, transform: 'translateY(0)' }}
+            className="transition-all duration-500 ease-out opacity-100 translate-y-0"
           >
             <Typography 
               variant="overline" 
               component="div"
-              sx={{ 
-                mb: 2, 
-                fontWeight: 600,
-                color: theme.palette.primary.main,
-                letterSpacing: 2,
-              }}
+              className="mb-4 font-semibold text-green-600 tracking-widest"
             >
               WHY CHOOSE RECYCLEHUB
             </Typography>
@@ -165,13 +103,7 @@ const Features = () => {
             <Typography 
               variant="h2" 
               component="h2"
-              sx={{ 
-                fontWeight: 800,
-                mb: 3,
-                background: 'linear-gradient(45deg, #4CAF50 30%, #1976D2 90%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
+              className="font-extrabold mb-6 bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent"
             >
               Features That Make a Difference
             </Typography>
@@ -179,13 +111,9 @@ const Features = () => {
             <Typography 
               variant="h6" 
               component="p"
-              sx={{ 
-                maxWidth: '800px',
-                mx: 'auto',
-                color: theme.palette.text.secondary,
-              }}
+              className="max-w-2xl mx-auto text-gray-600"
             >
-              RecycleHub combines cutting-edge AI technology with environmental consciousness to transform your shopping experience.
+              Bringing AI-powered waste management, eco-friendly shopping, and hassle-free e-waste disposal—all in one app! 
             </Typography>
           </div>
         </Box>
