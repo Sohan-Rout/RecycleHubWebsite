@@ -1,9 +1,6 @@
 'use client'
 import { useState } from 'react';
 import { Box, Container, Typography, Button, IconButton } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import BarChartIcon from '@mui/icons-material/BarChart';
 import CloseIcon from '@mui/icons-material/Close';
 
 const HowItWorks = () => {
