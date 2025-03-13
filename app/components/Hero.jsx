@@ -19,7 +19,7 @@ const Hero = () => {
                 variant="overline" 
                 component="div"
               >
-                SUSTAINABLE SHOPPING MADE EASY
+                Smart Recycling Starts with You
               </Typography>
               
               <Typography 
@@ -27,15 +27,15 @@ const Hero = () => {
                 component="h1"
                 className="font-poppins font-extrabold md:text-center text-4xl md:text-[4vw] lg:text-6xl bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent leading-tight min-h-[80px]"
               >
-                Shop Eco-Friendly
+                Scan. Sort. Save the Planet.
               </Typography>
               
               <Typography 
                 variant="h5" 
                 component="p"
-                className="text-gray-500 md:text-center lg:text-left sm:text-center font-normal mb-4 text-base md:text-[1.5vw] min-h-[60px]"
+                className="text-gray-500 md:text-center lg:text-left sm:text-center font-normal mb-6 mt-6 text-base md:text-[1.5vw] min-h-[60px]"
               >
-                RecycleHub helps you make sustainable choices with AI-powered product recommendations and environmental impact insights.
+                Tired of guessing whether something is recyclable? Our AI-powered recycling app makes it simple—just scan an item, and we’ll instantly tell you if it belongs in the recycling bin or not. With real-time data, location-based guidelines, and smart insights, we help you make eco-friendly choices effortlessly. Every scan brings us closer to a cleaner planet. Recycle smarter, live greener!
               </Typography>
               
               <Box className="flex gap-2 flex-wrap sm:flex-nowrap justify-center">
@@ -62,7 +62,7 @@ const Hero = () => {
           
           <Grid item xs={12} md={6}>
             {/* Updated Image Container */}
-            <Box className="relative w-full h-[300px] md:h-[500px] lg:h-[600px] opacity-100 scale-100 transition-opacity duration-800 transition-transform duration-800">
+            <Box className="relative w-full h-[300px] md:h-[500px] lg:h-[500px] opacity-100 scale-100 transition-all duration-700">
               <Image
                 src="/HomePage.png"
                 alt="RecycleHub App Interface"
