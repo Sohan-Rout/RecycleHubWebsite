@@ -10,32 +10,36 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      const cursorBlur = document.querySelector('.cursor-blur');
-      if (cursorBlur) {
-        cursorBlur.classList.add('active');
-        cursorBlur.style.setProperty('--x', `${e.clientX}px`);
-        cursorBlur.style.setProperty('--y', `${e.clientY}px`);
-        document.documentElement.style.setProperty('--cursor-x', `${e.clientX}px`);
-        document.documentElement.style.setProperty('--cursor-y', `${e.clientY}px`);
-      }
-    };
+    if (typeof window !== 'undefined') {
+      const handleMouseMove = (e) => {
+        const cursorBlur = document.querySelector('.cursor-blur');
+        if (cursorBlur) {
+          cursorBlur.classList.add('active');
+          cursorBlur.style.setProperty('--x', `${e.clientX}px`);
+          cursorBlur.style.setProperty('--y', `${e.clientY}px`);
+          document.documentElement.style.setProperty('--cursor-x', `${e.clientX}px`);
+          document.documentElement.style.setProperty('--cursor-y', `${e.clientY}px`);
+        }
+      };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mousemove', handleMouseMove);
+      return () => window.removeEventListener('mousemove', handleMouseMove);
+    }
   }, []);
 
   const handleDrawerToggle = () => {
@@ -90,7 +94,7 @@ const Navbar = () => {
       position="fixed" 
       className={`transition-all duration-[100ms] ease-in-out ${scrolled ? 'bg-opacity-90 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
       style={{ 
-        background: scrolled ? '#F3F4F6' : 'transparent',
+        background: scrolled ? '#F3F4F6' : 'rgba(255, 255, 255, 0.9)',
         boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : 'none'
       }}
       sx={{
