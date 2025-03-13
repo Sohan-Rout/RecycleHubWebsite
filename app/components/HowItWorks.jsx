@@ -35,7 +35,7 @@ const HowItWorks = () => {
             component="h2"
             className="font-extrabold mb-6 bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent"
           >
-            Simple Steps to Shop Sustainably
+            Shop Smart, Waste Less – Your Guide to Sustainable Living!
           </Typography>
           
           <Typography 

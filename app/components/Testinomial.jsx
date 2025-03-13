@@ -1,6 +1,6 @@
 const Testimonial = () => {
   return (
-    <section id="testimonial" className="py-12 md:py-16 bg-gray-100">
+    <section id="testimonial" className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-6xl md:text-6xl font-bold font-poppins bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent text-center mb-16">
           What Our Customers Say
