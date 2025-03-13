@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Box, Container, Grid, Typography, Link, IconButton } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -14,7 +14,7 @@ const Footer = () => {
         { name: 'Careers', href: '#' },
         { name: 'Press', href: '#' },
         { name: 'Blog', href: '#' },
-      ]
+      ],
     },
     {
       title: 'Resources',
@@ -23,7 +23,7 @@ const Footer = () => {
         { name: 'Product Directory', href: '#' },
         { name: 'Carbon Calculator', href: '#' },
         { name: 'Partner Program', href: '#' },
-      ]
+      ],
     },
     {
       title: 'Support',
@@ -32,62 +32,64 @@ const Footer = () => {
         { name: 'Contact Us', href: '#contact' },
         { name: 'Privacy Policy', href: '#' },
         { name: 'Terms of Service', href: '#' },
-      ]
-    }
+      ],
+    },
   ];
 
   return (
-    <Box 
-      component="footer" 
-      className="py-12 md:py-16 border-t border-gray-200 bg-white font-poppins"
+    <Box
+      component="footer"
+      className="py-12 md:py-16 border-t border-gray-200 bg-black font-poppins"
     >
       <Container maxWidth="lg" className="px-4">
         <Grid container spacing={4}>
+          {/* Logo and Social Links */}
           <Grid item xs={12} md={4}>
             <Box className="mb-8">
               <div className="transition-all duration-500 ease-out opacity-100 translate-y-0">
                 <div>
                   <h1 className="font-semibold text-green-600 text-2xl">
-                    Recyle<span className="text-black">Hub</span>
+                    Recyle<span className="text-white">Hub</span>
                   </h1>
                 </div>
-                <Typography 
-                  variant="body1" 
-                  className="mb-6 text-gray-700 max-w-[300px] font-poppins"
+                <Typography
+                  variant="body1"
+                  className="mb-6 text-gray-400 max-w-[300px] font-poppins"
                 >
                   Making sustainable shopping accessible and rewarding for everyone. Join our community of eco-conscious consumers.
                 </Typography>
-                
+
+                {/* Social Links */}
                 <Box className="flex gap-2">
-                  <IconButton 
+                  <IconButton
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-green-600"
+                    className="text-gray-400 hover:text-green-600"
                   >
                     <GitHubIcon />
                   </IconButton>
-                  <IconButton 
+                  <IconButton
                     href="https://twitter.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-green-600"
+                    className="text-gray-400 hover:text-green-600"
                   >
                     <TwitterIcon />
                   </IconButton>
-                  <IconButton 
+                  <IconButton
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-green-600"
+                    className="text-gray-400 hover:text-green-600"
                   >
                     <InstagramIcon />
                   </IconButton>
-                  <IconButton 
+                  <IconButton
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-green-600"
+                    className="text-gray-400 hover:text-green-600"
                   >
                     <LinkedInIcon />
                   </IconButton>
@@ -95,28 +97,28 @@ const Footer = () => {
               </div>
             </Box>
           </Grid>
-          
+
+          {/* Footer Links */}
           {footerLinks.map((section, index) => (
             <Grid item xs={12} sm={6} md={2} key={index}>
               <div
                 className="transition-all duration-500 ease-out opacity-100 translate-y-0"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <Typography 
-                  variant="h6" 
-                  component="h3" 
-                  className="mb-6 font-bold text-black font-poppins"
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  className="mb-6 font-bold text-white font-poppins"
                 >
                   {section.title}
                 </Typography>
-                
                 <Box component="ul" className="p-0 m-0 list-none">
                   {section.links.map((link, i) => (
                     <Box component="li" key={i} className="mb-3">
-                      <Link 
-                        href={link.href} 
+                      <Link
+                        href={link.href}
                         underline="none"
-                        className="text-gray-700 hover:text-green-600 transition-all duration-300 ease-in-out font-poppins hover:pl-2"
+                        className="text-gray-400 hover:text-green-600 transition-all duration-300 ease-in-out font-poppins hover:pl-2"
                       >
                         {link.name}
                       </Link>
@@ -127,38 +129,38 @@ const Footer = () => {
             </Grid>
           ))}
         </Grid>
-        
-        <Box 
-          className="mt-12 pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center sm:items-start gap-4"
+
+        {/* Bottom Section */}
+        <Box
+          className="mt-12 pt-6 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4"
         >
-          <Typography 
-            variant="body2" 
-            className="text-gray-700 text-center sm:text-left font-poppins"
+          <Typography
+            variant="body2"
+            className="text-gray-400 text-center sm:text-left font-poppins"
           >
             © {new Date().getFullYear()} RecycleHub. All rights reserved.
           </Typography>
-          
-          <Box 
+          <Box
             className="flex gap-6 flex-wrap justify-center sm:justify-start"
           >
-            <Link 
-              href="#" 
+            <Link
+              href="#"
               underline="none"
-              className="text-gray-700 text-sm hover:text-green-600 transition-all duration-300 ease-in-out font-poppins"
+              className="text-gray-400 text-sm hover:text-green-600 transition-all duration-300 ease-in-out font-poppins"
             >
               Privacy Policy
             </Link>
-            <Link 
-              href="#" 
+            <Link
+              href="#"
               underline="none"
-              className="text-gray-700 text-sm hover:text-green-600 transition-all duration-300 ease-in-out font-poppins"
+              className="text-gray-400 text-sm hover:text-green-600 transition-all duration-300 ease-in-out font-poppins"
             >
               Terms of Service
             </Link>
-            <Link 
-              href="#" 
+            <Link
+              href="#"
               underline="none"
-              className="text-gray-700 text-sm hover:text-green-600 transition-all duration-300 ease-in-out font-poppins"
+              className="text-gray-400 text-sm hover:text-green-600 transition-all duration-300 ease-in-out font-poppins"
             >
               Cookie Policy
             </Link>
