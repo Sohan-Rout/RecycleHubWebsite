@@ -50,7 +50,9 @@ const Navbar = () => {
     { name: 'Features', href: '#features' },
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'Testinomial', href: '#testimonial' },
+    { name: 'FAQ', href: '#Faq'},
     { name: 'Contact', href: '#contact' },
+    
   ];
 
   const drawer = (
