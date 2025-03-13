@@ -1,11 +1,8 @@
 import { Box, Container, Typography, Button, Grid, useTheme } from '@mui/material';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import NatureIcon from '@mui/icons-material/Nature';
-import Image from 'next/image';
 
 const Hero = () => {
   const theme = useTheme();
-  const isDarkMode = theme.palette.mode === 'dark';
 
   return (
     <Box 
@@ -42,15 +39,9 @@ const Hero = () => {
               }}
             >
               <Typography 
-                className='font-poppins text-black text-center'
+                className='font-poppins mb-2 text-black text-center font-semibold tracking-[0.25rem]'
                 variant="overline" 
                 component="div"
-                sx={{ 
-                  mb: 2, 
-                  fontWeight: 600,
-                  color: theme.palette.primary.main,
-                  letterSpacing: 2,
-                }}
               >
                 SUSTAINABLE SHOPPING MADE EASY
               </Typography>
@@ -58,8 +49,8 @@ const Hero = () => {
               <Typography 
                 variant="h1" 
                 component="h1"
+                className='font-poppins font-extrabold md:text-center'
                 sx={{ 
-                  fontWeight: 800,
                   fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
                   mb: 2,
                   background: 'linear-gradient(45deg, #4CAF50 30%, #1976D2 90%)',
@@ -74,11 +65,10 @@ const Hero = () => {
               <Typography 
                 variant="h5" 
                 component="p"
+                className='text-gray-500 md:text-center lg:text-left sm:text-center'
                 sx={{ 
                   mb: 4, 
-                  color: theme.palette.text.secondary,
                   fontWeight: 400,
-                  maxWidth: '90%',
                 }}
               >
                 RecycleHub helps you make sustainable choices with AI-powered product recommendations and environmental impact insights.
@@ -113,7 +103,7 @@ const Hero = () => {
                   variant="outlined" 
                   color="primary"
                   size="large"
-                  startIcon={<NatureIcon />}
+                  startIcon={<NatureIcon className='animate-pulse'/>}
                   sx={{ 
                     py: 1.5, 
                     px: 3,
