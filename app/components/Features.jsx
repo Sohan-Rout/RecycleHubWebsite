@@ -15,7 +15,7 @@ const FeatureCard = ({ icon, title, description, index }) => {
     >
       <Card 
         elevation={0}
-        className="h-[20rem] rounded-3xl p-4 bg-white/80 backdrop-blur-lg border border-gray-200 hover:-translate-y-2 hover:shadow-lg transition-transform duration-300 ease-in-out flex flex-col justify-center items-center text-center"
+        className="h-[20rem] rounded-3xl p-4 bg-white/80 backdrop-blur-lg border border-gray-200 hover:-translate-y-2 hover:shadow-lg transition-transform duration-300 ease-in-out flex flex-col justify-center hover:animate-bounce items-center text-center"
       >
         <CardContent className="p-6 flex flex-col items-center">
           <Box 
