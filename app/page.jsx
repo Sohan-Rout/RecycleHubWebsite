@@ -6,9 +6,10 @@ import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Features from './components/Features.jsx';
 import HowItWorks from './components/HowItWorks.jsx';
-import About from './components/Testinomial.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import Testimonial from "./components/Testinomial.jsx";
+import Faq from "./components/Faq.jsx";
 
 export default function Home() {
   return (
@@ -31,7 +32,8 @@ export default function Home() {
         <Hero />
         <Features />
         <HowItWorks />
-        <About />
+        <Testimonial />
+        <Faq />
         <Contact />
         <Footer />
       </Box>
