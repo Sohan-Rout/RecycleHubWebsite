@@ -88,15 +88,16 @@ const Navbar = () => {
   return (
     <AppBar 
       position="fixed" 
-      className={`transition-all duration-[100ms] ease-in-out ${scrolled ? 'bg-opacity-90 backdrop-blur-md shadow-lg' : 'md:bg-transparent'}`}
+      className={`transition-all duration-[100ms] ease-in-out ${scrolled ? 'bg-opacity-90 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
       style={{ 
-        background: scrolled ? '#F3F4F6' : 'rgba(255, 255, 255, 0.9)',
+        background: scrolled ? '#F3F4F6' : 'transparent',
         boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' : 'none'
       }}
       sx={{
         '@media (max-width: 768px)': {
-          background: '#F3F4F6',
+          background: scrolled ? '#F3F4F6' : 'transparent',
           backdropFilter: 'blur(10px)',
+          transitionDuration: '100ms',
         }
       }}
     >
@@ -124,7 +125,7 @@ const Navbar = () => {
             <Button 
               variant="contained" 
               color="primary" 
-              className="ml-4 rounded-xl font-poppins font-medium shadow-md bg-blue-500 text-white px-3 py-1.5 hover:bg-black transition-colors duration-300 text-sm"
+              className="ml-4 rounded-xl shadow-md bg-blue-500 text-white px-2 py-1 hover:bg-black transition-colors duration-100 text-sm"
             >
               Download App
             </Button>
