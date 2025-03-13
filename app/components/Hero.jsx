@@ -42,6 +42,7 @@ const Hero = () => {
               }}
             >
               <Typography 
+                className='font-poppins text-black text-center'
                 variant="overline" 
                 component="div"
                 sx={{ 
@@ -67,7 +68,7 @@ const Hero = () => {
                   lineHeight: 1.2,
                 }}
               >
-                Shop Eco-Friendly with AI Assistance
+                Shop Eco-Friendly
               </Typography>
               
               <Typography 
@@ -85,10 +86,9 @@ const Hero = () => {
               
               <Box sx={{ display: 'flex', gap: 2, flexWrap: { xs: 'wrap', sm: 'nowrap' } }}>
                 <Button 
+                  className='bg-blue-500 text-white hover:bg-blue-600 rounded-lg font-poppins font-semibold'
                   variant="contained" 
-                  color="primary"
                   size="large"
-                  startIcon={<ShoppingBagIcon />}
                   sx={{ 
                     py: 1.5, 
                     px: 3,
@@ -106,7 +106,7 @@ const Hero = () => {
                     }
                   }}
                 >
-                  Download App
+                  Download Now
                 </Button>
                 
                 <Button 
@@ -133,31 +133,6 @@ const Hero = () => {
                 >
                   Learn More
                 </Button>
-              </Box>
-              
-              <Box 
-                sx={{ 
-                  mt: 6, 
-                  display: 'flex', 
-                  alignItems: 'center',
-                  p: 2,
-                  borderRadius: '16px',
-                  background: isDarkMode ? 'rgba(76, 175, 80, 0.1)' : 'rgba(76, 175, 80, 0.1)',
-                  border: '1px solid',
-                  borderColor: isDarkMode ? 'rgba(76, 175, 80, 0.3)' : 'rgba(76, 175, 80, 0.3)',
-                }}
-              >
-                <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                  <Typography variant="body2" sx={{ fontWeight: 600, color: theme.palette.primary.main }}>
-                    ✓ Eco-friendly products
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontWeight: 600, color: theme.palette.primary.main }}>
-                    ✓ Carbon footprint tracking
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontWeight: 600, color: theme.palette.primary.main }}>
-                    ✓ Sustainable shopping guides
-                  </Typography>
-                </Box>
               </Box>
             </Box>
           </Grid>
