@@ -13,6 +13,9 @@ const Hero = () => {
         pb: { xs: 8, md: '8vw' },
         position: 'relative',
         overflow: 'hidden',
+        width: '100%',
+        maxWidth: '100vw',
+        boxSizing: 'border-box',
       }}
     >
       <Container maxWidth="lg" className="px-4">
@@ -40,7 +43,7 @@ const Hero = () => {
                 component="p"
                 className="text-gray-500 md:text-center lg:text-left sm:text-center font-normal mb-6 mt-6 text-base md:text-[1.5vw] min-h-[60px]"
               >
-                Tired of guessing whether something is recyclable? Our AI-powered recycling app makes it simple—just scan an item, and we’ll instantly tell you if it belongs in the recycling bin or not. With real-time data, location-based guidelines, and smart insights, we help you make eco-friendly choices effortlessly. Every scan brings us closer to a cleaner planet. Recycle smarter, live greener!
+                Tired of guessing whether something is recyclable? Our AI-powered recycling app makes it simple—just scan an item, and we'll instantly tell you if it belongs in the recycling bin or not. With real-time data, location-based guidelines, and smart insights, we help you make eco-friendly choices effortlessly. Every scan brings us closer to a cleaner planet. Recycle smarter, live greener!
               </Typography>
               
               <Box className="flex gap-2 flex-wrap sm:flex-nowrap justify-center">
