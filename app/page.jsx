@@ -8,7 +8,7 @@ import Features from './components/Features.jsx';
 import HowItWorks from './components/HowItWorks.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
-import Testinomial from "./components/Testinomial.jsx";
+import Testimonials from "./components/Testinomial.jsx";
 import Faq from "./components/Faq.jsx";
 
 export default function Home() {
@@ -32,7 +32,7 @@ export default function Home() {
         <Hero />
         <Features />
         <HowItWorks />
-        <Testinomial />
+        <Testimonials />
         <Faq />
         <Contact />
         <Footer />

@@ -1,6 +1,6 @@
 'use client'
 
-const Testinomial = () => {
+const Testimonials = () => {
   return (
     <section id="testinomial" className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -64,4 +64,4 @@ const Testinomial = () => {
   );
 };
 
-export default Testinomial;
+export default Testimonials;
