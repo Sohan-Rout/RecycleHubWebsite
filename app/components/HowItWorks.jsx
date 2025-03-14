@@ -122,9 +122,9 @@ const HowItWorks = () => {
               )}
 
 {activeCard === 'name2' && (
-  <div className="flex flex-col md:flex-row gap-8 items-center">
+  <div className="flex ml-16 flex-col md:flex-row-reverse gap-8 items-center text-center"> {/* Use flex-row-reverse */}
     {/* Image Carousel */}
-    <div className="relative align-items w-full md:w-1/2 h-[400px]"> {/* Fixed height container */}
+    <div className="relative w-full md:w-1/2 h-[400px]"> {/* Fixed height container */}
       {images.map((src, index) => (
         <div
           key={index}
@@ -136,20 +136,19 @@ const HowItWorks = () => {
             src={src}
             alt={`Shopping Demo ${index + 1}`}
             width={200} // Adjust width to match container
-            height={100} // Adjust height to match container
-            className="rounded-lg object-cover w-200 h-100" // Ensure images scale properly
+            height={150} // Adjust height to match container
+            className="rounded-lg object-cover ml-10 w-200 h-150" // Ensure images scale properly
           />
         </div>
       ))}
     </div>
 
     {/* Steps */}
-    <div className="w-full md:w-1/2 text-left">
-      <h4 className="font-bold text-xl mb-4">Steps to Manage Your Cart:</h4>
-      <ul className="list-disc list-inside space-y-2">
+    <div className="w-full md:w-1/2 ml-8 text-left">
+      <ul className="list-disc space-y-2">
         {steps.map((step, index) => (
-          <li key={index} className="text-gray-600">
-            {step}
+          <li key={index} className="text-black font-poppins font-medium text-xl text">
+          {step}
           </li>
         ))}
       </ul>
