@@ -16,12 +16,12 @@ const Testinomial = () => {
                 alt="Client 1"
                 className="w-20 h-20 rounded-full mb-4"
               />
-              <h4 className="font-bold text-lg">Emily</h4>
+              <h4 className="font-bold text-lg">Angelina</h4>
               <p className="text-sm text-gray-500 mb-4">New Delhi, Delhi-110072</p>
               <hr className="w-full border-t border-gray-200 mb-4" />
             </div>
             <p className="text-gray-600 text-center">
-              "I love how easy it is to use RecycleHub! Just scan an item, and it instantly tells me if it’s recyclable. The location-based recycling rules are a game-changer—I no longer have to guess what goes where. A must-have for anyone who cares about the planet!"
+              "I love how easy it is to use RecycleHub! Just scan an item, and it instantly tells me if it's recyclable. The location-based recycling rules are a game-changer—I no longer have to guess what goes where. A must-have for anyone who cares about the planet!"
             </p>
           </div>
 
@@ -33,12 +33,12 @@ const Testinomial = () => {
                 alt="Client 2"
                 className="w-20 h-20 rounded-full mb-4"
               />
-              <h4 className="font-bold text-lg">Michael Johnson</h4>
-              <p className="text-sm text-gray-500 mb-4">CTO, Company B</p>
+              <h4 className="font-bold text-lg">Ronit</h4>
+              <p className="text-sm text-gray-500 mb-4">Gali no 25 Mangolpuri New Delhi </p>
               <hr className="w-full border-t border-gray-200 mb-4" />
             </div>
             <p className="text-gray-600 text-center">
-              "The eco-product shopping feature is amazing! I’ve discovered so many sustainable brands through this app. Plus, the rewards system makes recycling fun and engaging. Highly recommend!"
+              "The eco-product shopping feature is amazing! I've discovered so many sustainable brands through this app. Plus, the rewards system makes recycling fun and engaging. Highly recommend!"
             </p>
           </div>
 
@@ -51,7 +51,7 @@ const Testinomial = () => {
                 className="w-20 h-20 rounded-full mb-4"
               />
               <h4 className="font-bold text-lg">Sarah</h4>
-              <p className="text-sm text-gray-500 mb-4">Founder, Company C</p>
+              <p className="text-sm text-gray-500 mb-4">Dwarka Sec 6, New Delhi</p>
               <hr className="w-full border-t border-gray-200 mb-4" />
             </div>
             <p className="text-gray-600 text-center">
