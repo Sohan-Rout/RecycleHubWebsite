@@ -43,7 +43,7 @@ const Hero = () => {
           {/* Right Column: Image */}
           <div className="relative w-full h-[300px] md:h-[500px] lg:h-[500px] opacity-100 scale-100 transition-all duration-700">
             <Image
-              src="/HomePage.png"
+              src="/LandingPage.png"
               alt="RecycleHub App Interface"
               layout="fill"
               objectFit="contain"

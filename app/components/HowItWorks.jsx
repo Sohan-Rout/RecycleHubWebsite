@@ -1,8 +1,32 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Image from 'next/image'; // Import the Image component from Next.js
 
 const HowItWorks = () => {
   const [activeCard, setActiveCard] = useState('name1'); // Default to first option
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track current image index
+
+  const images = [
+    '/howitworkssection/CartHomeSection.png',
+    '/howitworkssection/CartSection.png',
+  ];
+
+  const steps = [
+    'Step 1: Add items to your cart by clicking the "Add to Cart" button.',
+    'Step 2: Remove items by clicking the "Remove" button next to the item.',
+    'Step 3: Check the total amount in your cart.',
+    'Step 4: Proceed to payment by clicking the "Checkout" button.',
+  ];
+
+  useEffect(() => {
+    if (activeCard === 'name2') {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 3000); // Change image every 3 seconds
+
+      return () => clearInterval(interval); // Cleanup interval on unmount
+    }
+  }, [activeCard]); // Run effect only when activeCard changes
 
   const handleCardClick = (cardName) => {
     setActiveCard(cardName);
@@ -79,11 +103,65 @@ const HowItWorks = () => {
                 {activeCard === 'name3' && 'Order Pickup How-To'}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed">
-                {activeCard === 'name1' && 'Detailed explanation of how scanning works in RecycleHub. Use your phone camera to scan products and get instant sustainability insights.'}
-                {activeCard === 'name2' && 'Detailed explanation of how to add and remove items in your cart. Manage your shopping list with ease.'}
-                {activeCard === 'name3' && 'Detailed explanation of how to schedule an e-waste pickup. We make recycling electronics hassle-free.'}
-              </p>
+              {/* Content for each card */}
+              {activeCard === 'name1' && (
+                <>
+                  <p className="text-gray-600 leading-relaxed">
+                    Detailed explanation of how scanning works in RecycleHub. Use your phone camera to scan products and get instant sustainability insights.
+                  </p>
+                  <div className="mt-4">
+                    <Image 
+                      src="/images/scanning-demo.jpg" // Replace with your image path
+                      alt="Scanning Demo"
+                      width={600}
+                      height={400}
+                      className="rounded-lg"
+                    />
+                  </div>
+                </>
+              )}
+
+{activeCard === 'name2' && (
+  <div className="flex flex-col md:flex-row gap-8 items-center">
+    {/* Image Carousel */}
+    <div className="relative align-items w-full md:w-1/2 h-[400px]"> {/* Fixed height container */}
+      {images.map((src, index) => (
+        <div
+          key={index}
+          className={`transition-opacity duration-1000 ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0 absolute top-0'
+          }`}
+        >
+          <Image 
+            src={src}
+            alt={`Shopping Demo ${index + 1}`}
+            width={200} // Adjust width to match container
+            height={100} // Adjust height to match container
+            className="rounded-lg object-cover w-200 h-100" // Ensure images scale properly
+          />
+        </div>
+      ))}
+    </div>
+
+    {/* Steps */}
+    <div className="w-full md:w-1/2 text-left">
+      <h4 className="font-bold text-xl mb-4">Steps to Manage Your Cart:</h4>
+      <ul className="list-disc list-inside space-y-2">
+        {steps.map((step, index) => (
+          <li key={index} className="text-gray-600">
+            {step}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}
+
+              {activeCard === 'name3' && (
+                <p className="text-gray-600 leading-relaxed">
+                  Detailed explanation of how to schedule an e-waste pickup. We make recycling electronics hassle-free.
+                </p>
+              )}
             </div>
           </div>
         )}
