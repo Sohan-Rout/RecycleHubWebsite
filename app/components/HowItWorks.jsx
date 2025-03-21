@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image'; // Import the Image component from Next.js
 
 const HowItWorks = () => {
-  const [activeCard, setActiveCard] = useState('name1'); // Default to first option
+  const [activeCard, setActiveCard] = useState('name2'); // Default to first option
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track current image index
 
   const images = [
